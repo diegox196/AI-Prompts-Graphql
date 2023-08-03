@@ -4,6 +4,9 @@ require('dotenv').config()
 const { PORT } = process.env; // Get the PORT from environment variables
 require('./database'); // Import and establish the database connection from database.js
 
+const graphqlRoute = require('./routes/graphqlRoute');
+app.use(graphqlRoute);
+
 // Start the server and listen on the specified PORT
 app.listen(PORT, () => {
   console.log(`The server is listening on the PORT ${PORT} (URL http://localhost:${PORT})`);
