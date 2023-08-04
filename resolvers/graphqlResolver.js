@@ -1,9 +1,9 @@
-const { getAllPrompts, searchPromptsByName, searchPromptsByTag } = require('../controllers/promptController');
+const { getPromptsByUserId, searchUserPromptsByName, searchUserPromptsByTag } = require('../controllers/promptController');
 
 const promptResolver = {
-  getAllPrompts: getAllPrompts,
-  searchPromptsByName: searchPromptsByName,
-  searchPromptsByTag: searchPromptsByTag,  
+  getPromptsByUserId,
+  searchUserPromptsByName,
+  searchUserPromptsByTag,  
 };
 
 module.exports = promptResolver;

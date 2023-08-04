@@ -6,13 +6,12 @@ const promptSchema = buildSchema(`
     name: String!
     type: String!
     tags: [String!]!
-    user_id: ID!
   }
 
   type Query {
-    getAllPrompts: [Prompt]
-    searchPromptsByName(name: String!): [Prompt]
-    searchPromptsByTag(tag: String!): [Prompt]
+    getPromptsByUserId(user_id: ID!): [Prompt]
+    searchUserPromptsByName(user_id: ID!, name: String!): [Prompt]
+    searchUserPromptsByTag(user_id: ID!, tag: String!): [Prompt]
   }
 `);
 
