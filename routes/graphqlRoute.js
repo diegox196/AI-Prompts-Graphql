@@ -8,7 +8,7 @@ const promptResolver = require('../resolvers/graphqlResolver');
 const checkUserAuth = require('../middlewares/userAuth'); // Import the userAuth middleware for user authentication.
 const checkUserRoleAuth = require('../middlewares/userRole'); // Import the userRole middleware for user role authorization.
 
-graphqlRoute.use('/graphql', checkUserAuth, checkUserRoleAuth(['user']), graphqlHTTP({
+graphqlRoute.use('/api/prompts/graphql', checkUserAuth, checkUserRoleAuth(['user']), graphqlHTTP({
   schema: promptSchema,
   rootValue: promptResolver,
   graphiql: true,
